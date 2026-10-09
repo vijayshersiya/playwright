@@ -1,8 +1,10 @@
 const {test,expect} = require('@playwright/test');
 
-test.use({ 
-  viewport: { width: 1700, height: 400 } 
-});
+
+// add viewport for browser
+// test.use({ 
+//   viewport: { width: 1700, height: 400 } 
+// });
 test("Check valid login", async({page})=>{
 
 // await page.goto("https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https://mail.google.com/mail&ec=GAlAFw&hl=en&service=mail&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S1074801089:1791106370434264")

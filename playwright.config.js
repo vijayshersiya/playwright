@@ -68,7 +68,11 @@ export default defineConfig({
     {
       name: 'Google Chrome',
       use: { ...devices['Desktop Chrome'], channel: 'chrome',
-        // viewport: {width:1920, height: 300}
+          viewport: {width:1920, height: 300},
+          screenshot :"on",
+          video :"on",
+          trace :"on"
+
        },
   
       }
