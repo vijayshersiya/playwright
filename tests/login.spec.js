@@ -1,11 +1,17 @@
 const {test,expect} = require('@playwright/test');
+
+test.use({ 
+  viewport: { width: 1700, height: 400 } 
+});
 test("Check valid login", async({page})=>{
 
 // await page.goto("https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https://mail.google.com/mail&ec=GAlAFw&hl=en&service=mail&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S1074801089:1791106370434264")
 
 await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
+ 
 await  page.waitForTimeout(5000)
+
 
 await page.getByPlaceholder("Username").first().fill("Admin")
  await  page.waitForTimeout(3000)
@@ -15,6 +21,9 @@ await page.getByPlaceholder("Password").fill("admin123")
 
  await page.locator("//button[@type='submit']").first().click();
  await  page.waitForTimeout(3000)
+
+ console.log("======width",await page.viewportSize().width)
+ console.log("======height",await page.viewportSize().height)
 
 // await page.locator("input[type='password']").first().fill("admin123");
 // await  page.waitForTimeout(3000)
